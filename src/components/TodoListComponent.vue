@@ -4,14 +4,14 @@
     <div class="input-group-prepend">
       <span class="input-group-text" id="basic-addon1">待辦事項</span>
     </div>
-    <input type="text" class="form-control" placeholder="準備要做的任務" v-model="newTodo"  @keyup.enter="insertData">
+    <input type="text" class="form-control" placeholder="新增任務" v-model="newTodo"  @keyup.enter="insertData">
     <div class="input-group-append">
       <button class="btn btn-primary" type="button" @click="insertData">新增</button>
     </div>
   </div>
   <div class="card">
 
-    <div style="padding-left: 20px;" class="row align-items-start" v-for="item in todos" :key="item.id">
+    <div style="padding-left: 20px; margin-top:10px;" class="row align-items-start" v-for="item in todos" :key="item.id">
       <div class="col-10">
         <p>{{item.name}}</p>
       </div>
@@ -23,7 +23,6 @@
 
     <div class="card-footer d-flex justify-content-between" style="margin-top: 20px;">
       <span>目前有{{todos.length}}筆任務</span>
-      <!-- <a href="#">清除所有任務</a> -->
     </div>
   </div>
 </div>
@@ -37,7 +36,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <input v-model="updateTodo"/>
+        <input class="form-control" type="text" v-model="updateTodo"/>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
